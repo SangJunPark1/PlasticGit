@@ -12,6 +12,7 @@ TagManager:
   - EmptyBox1
   - GoalBox
   - Start
+  - Wall
   layers:
   - Default
   - TransparentFX

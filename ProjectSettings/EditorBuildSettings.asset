@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ForResearch/Start.unity
+    path: Assets/Scenes/Previous.Ver/Start.unity
     guid: 969c297fb4a040048b658cd83900f813
   - enabled: 1
     path: Assets/Scenes/ForResearch/S_Turn_1.unity
@@ -39,20 +39,8 @@ EditorBuildSettings:
     path: Assets/Scenes/ForResearch/U_Turn_1.unity
     guid: 1724eeca4dc77e24da2b7f2563d272d5
   - enabled: 1
-    path: Assets/Scenes/ForResearch/U_Turn_2.unity
-    guid: 2ea5f4fea85521944a8c34b1b86a3c0f
-  - enabled: 1
-    path: Assets/Scenes/ForResearch/U_Turn_3.unity
-    guid: 180505666c3f42b479d063a4930e50e5
-  - enabled: 1
-    path: Assets/Scenes/ForResearch/Acceleration_Straight_Course.unity
+    path: Assets/Scenes/ForResearch/Straight_Course.unity
     guid: 3e811d44e7a2d464ba80ad3d1b29ca27
-  - enabled: 1
-    path: Assets/Scenes/Course/RapidAcceleration.unity
-    guid: 2ab5a86d61ba7554fa3dbeb105a131bb
-  - enabled: 1
-    path: Assets/Scenes/Course/RapidDeceleration.unity
-    guid: 4e9a5f1f030fdb64db4056a1be769a47
   - enabled: 1
     path: Assets/Scenes/ForResearch/End.unity
     guid: 4b81f9c8397c07c489c3942523ab46de
