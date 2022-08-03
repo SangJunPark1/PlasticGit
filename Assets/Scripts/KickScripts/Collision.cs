@@ -10,29 +10,29 @@ public class Collision : MonoBehaviour
     public static float speed = 0f;
     [SerializeField] TextMesh DisplaySpeed;
 
-    Control1 control1;
+    public static int vec_kmPerhour_int;
+
+
+    public Rigidbody rb;
 
     private void Awake() 
     {
-        control1 = GameObject.Find("Kick22").GetComponent<Control1>();
+
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        DisplaySpeed.text = "0"; 
+        DisplaySpeed.text = "0";
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Speed();
-    }
+        float vec = Mathf.Sqrt(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y + rb.velocity.z * rb.velocity.z);
+        float vec_kmPerhour = (vec * 3600) / 1000;
+        vec_kmPerhour_int = (int)vec_kmPerhour;
+        DisplaySpeed.text = vec_kmPerhour_int.ToString();
 
-    void Speed() 
-    {
-		speed = Mathf.Abs (control1.currentSpeed / control1.maxSpeed) * 100; // 최고속도에 대한 현재속도의 비
-        speed = Mathf.Round(speed);
-        Debug.Log(speed);
-        DisplaySpeed.text = speed.ToString();
-	}
+    }
 
 }
