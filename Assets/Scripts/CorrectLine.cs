@@ -12,7 +12,7 @@ public class CorrectLine : MonoBehaviour
     {
         isRoad = true;
         isRoad1 = true;
-        isRoad1 = true;
+        // isRoad1 = true;
     }
 
     void Update()

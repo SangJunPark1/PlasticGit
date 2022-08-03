@@ -25,7 +25,7 @@ public class StopSignal : MonoBehaviour
     {
         Signal_Steady.SetActive(false);
         int count = 0;
-        while (count < 5)
+        while (count < 3)
         {
             stopText.SetActive(true);
             yield return new WaitForSeconds(0.5f);

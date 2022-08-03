@@ -16,7 +16,7 @@ public class SceneLoad : MonoBehaviour
 
     private void Update()
     {
-        // ¹Ù·Î ´ÙÀ½ ½ºÅ×ÀÌÁö·Î ³Ñ¾î°¡´Â Ä¡Æ®Å°
+        // ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ Ä¡Æ®Å°
         if (Input.GetKeyDown(KeyCode.Q))
         {
             LoadNextLevel();
@@ -38,13 +38,13 @@ public class SceneLoad : MonoBehaviour
 
         if (Scene_SortOrder.currentSceneIndex >= Scene_SortOrder.SceneSort.Count)
         {
-            SceneManager.LoadScene(12);
+            SceneManager.LoadScene(13);
             Scene_SortOrder.currentSceneIndex = 0;
         }
         else
         {
             
-            SceneManager.LoadScene(Scene_SortOrder.SceneSort[Scene_SortOrder.currentSceneIndex]);    // 'nextSceneIndex' ¹øÂ° ¾ÀÀ» Ãâ·ÂÇÏ¶ó 
+            SceneManager.LoadScene(Scene_SortOrder.SceneSort[Scene_SortOrder.currentSceneIndex]);    // 'nextSceneIndex' ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ 
             Scene_SortOrder.currentSceneIndex += 1;
         }
 

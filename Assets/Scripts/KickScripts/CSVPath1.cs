@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class CSVPath : MonoBehaviour
+public class CSVPath1 : MonoBehaviour
 {
-    InputData1 InputData1;
+    // InputData1 InputData1;
 
     public List<float> Timer = new List<float>(); 
     public float Timer1;
 
-    GameObject StartCanvas;
-    public bool activeSelf;
+    // GameObject StartCanvas;
+    // public bool activeSelf;
 
     string filename = "";
 
@@ -30,9 +30,9 @@ public class CSVPath : MonoBehaviour
 
     private void Awake() 
     {
-        InputData1 = GameObject.Find("Button").GetComponent<InputData1>();
-        StartCanvas = GameObject.Find("StartCanvas");
-        Time.timeScale = 0;
+        // InputData1 = GameObject.Find("Button").GetComponent<InputData1>();
+        // StartCanvas = GameObject.Find("StartCanvas");
+        // Time.timeScale = 0;
     }
 
     void Start()
@@ -43,27 +43,25 @@ public class CSVPath : MonoBehaviour
 
     void Update()
     {
-        if (StartCanvas.activeSelf == false)
+        // Time.timeScale = 1;
+
+        filename = Application.dataPath + "/" + PlayerPrefs.GetString("name") + "_" + PlayerPrefs.GetString("age") + "_" + "InputData1.InputText_Stage.text + _ + file.csv";
+
+        Timer1 = Time.time;
+
+        Timer.Add(Timer1);
+
+        Crashposition = this.gameObject.transform.position;
+
+        PositionX.Add(Crashposition.x);
+        PositionZ.Add(Crashposition.z);
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Time.timeScale = 1;
-
-            filename = Application.dataPath + "/" + InputData1.InputText_Name.text + "_" + InputData1.InputText_Age.text + "_" + InputData1.InputText_Stage.text + "_" +"file.csv";
-
-            Timer1 = Time.time;
-
-            Timer.Add(Timer1);
-
-            Crashposition = this.gameObject.transform.position;
-
-            PositionX.Add(Crashposition.x);
-            PositionZ.Add(Crashposition.z);
-
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                WriteCSV();
-                Debug.Log("space2");
-            }
+            WriteCSV();
+            Debug.Log("space2");
         }
+
     }
 
     public void OnCollisionEnter(UnityEngine.Collision collision)

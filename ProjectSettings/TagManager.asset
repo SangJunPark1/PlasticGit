@@ -12,6 +12,7 @@ TagManager:
   - EmptyBox1
   - GoalBox
   - Start
+  - 1,3
   - Wall
   layers:
   - Default
