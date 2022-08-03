@@ -6,7 +6,7 @@ public class CorrectLine : MonoBehaviour
 {
     bool isRoad;
     bool isRoad1;
-    [SerializeField] public GameObject emergency;
+    [SerializeField] public GameObject emergency; // 경로이탈 텍스트
 
     void Start()
     {
