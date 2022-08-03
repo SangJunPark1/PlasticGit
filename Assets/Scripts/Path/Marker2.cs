@@ -16,7 +16,6 @@ public class Marker2 : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
-        transform.rotation = target.rotation;
 
     }
 }

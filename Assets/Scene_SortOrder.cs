@@ -8,18 +8,18 @@ public class Scene_SortOrder : MonoBehaviour
 {
 
     [SerializeField]
-    private Toggle Course_Toggle;  // Åä±Û
+    private Toggle Course_Toggle;  // ï¿½ï¿½ï¿½
     [SerializeField] 
-    private Text Course_Text;  // ¾À µîÀå ¼ø¼­¸¦ º¸¿©ÁÙ ÅØ½ºÆ®
+    private Text Course_Text;  // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®
 
     [SerializeField]
-    int SceneBuildNum;  // ÀÚ½Å¿¡ ¸Â´Â ¾À ¹øÈ£
+    int SceneBuildNum;  // ï¿½Ú½Å¿ï¿½ ï¿½Â´ï¿½ ï¿½ï¿½ ï¿½ï¿½È£
 
     public static int currentSceneIndex ;
 
-    public static List<int> SceneSort = new List<int>();  // ¾À ¹øÈ£°¡ ¼øÂ÷ÀûÀ¸·Î ´ã±â´Â ¹è¿­
-    static int[] SceneBuildNum_List = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};  // ¾À µîÀå ¼ø¼­
-    // ¿¹¸¦ µé¸é 1¹ø¾À-2µî, 2¹ø¾À-3µî, 3¹ø¾À-1µî À¸·Î Ã¼Å©¸¦ Çß´Ù¸é
+    public static List<int> SceneSort = new List<int>();  // ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
+    static int[] SceneBuildNum_List = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};  // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½-2ï¿½ï¿½, 2ï¿½ï¿½ï¿½ï¿½-3ï¿½ï¿½, 3ï¿½ï¿½ï¿½ï¿½-1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ ï¿½ß´Ù¸ï¿½
     // SceneSort = {3,1,2}
     // SceneBuildNum_List = {2,3,1}
 
@@ -30,7 +30,7 @@ public class Scene_SortOrder : MonoBehaviour
 
     void Update()
     {
-        // µð¹ö±×·Î ·Î±× ÂïÈ÷´Â °Å È®ÀÎ¿ë
+        // ï¿½ï¿½ï¿½ï¿½×·ï¿½ ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ È®ï¿½Î¿ï¿½
         if (Input.GetKeyDown(KeyCode.P))
         {
             for (int i = 0; i < SceneSort.Count; i++)
@@ -44,10 +44,10 @@ public class Scene_SortOrder : MonoBehaviour
             }
         }
 
-        // ¹Ýº¹¹®À» µ¹·Á¼­ SceneBuildNum_List¿¡ ¼ø¼­¸¦ ´ã¾ÆÁÜ
+        // ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ SceneBuildNum_Listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < SceneSort.Count; i++)
         {
-            for (int j = 0; j < 11; j++)
+            for (int j = 0; j < 12; j++)
             {
                 if (SceneSort[i] == j+1)
                 {
@@ -58,13 +58,13 @@ public class Scene_SortOrder : MonoBehaviour
         }
 
 
-        // toggleÀÌ Ã¼Å©µÇ¾îÀÖ´Ù¸é, SceneBuildNum_List ¹è¿­°ª(¾À µîÀå ¼ø¼­)¸¦ ÅØ½ºÆ®·Î ¶ç¿ò
+        // toggleï¿½ï¿½ Ã¼Å©ï¿½Ç¾ï¿½ï¿½Ö´Ù¸ï¿½, SceneBuildNum_List ï¿½è¿­ï¿½ï¿½(ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (Course_Toggle.isOn == true)
         {
             Course_Text.text = SceneBuildNum_List[SceneBuildNum-1].ToString();
         }
 
-        // toggleÀÌ Ã¼Å© µÇ¾îÀÖÁö ¾Ê´Ù¸é, ÅØ½ºÆ®·Î "-"¸¦ ¶ç¿ò
+        // toggleï¿½ï¿½ Ã¼Å© ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½, ï¿½Ø½ï¿½Æ®ï¿½ï¿½ "-"ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (Course_Toggle.isOn == false)
         {
             Course_Text.text = "-";
@@ -75,13 +75,13 @@ public class Scene_SortOrder : MonoBehaviour
 
     public void OnChangeToggle()
     {
-        // toggleÀÌ Ã¼Å©µÇ¾îÀÖ´Ù¸é, SceneSort¿¡ ÇØ´ç ¾À ¹øÈ£¸¦ ³Ö¾îÁÜ
+        // toggleï¿½ï¿½ Ã¼Å©ï¿½Ç¾ï¿½ï¿½Ö´Ù¸ï¿½, SceneSortï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
         if (Course_Toggle.isOn == true) 
         { 
             SceneSort.Add(SceneBuildNum); 
         }
 
-        // toggleÀÌ Ã¼Å© µÇ¾îÀÖÁö ¾Ê´Ù¸é, SceneSort¿¡ ÇØ´ç ¾À ¹øÈ£¸¦ »èÁ¦
+        // toggleï¿½ï¿½ Ã¼Å© ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Ù¸ï¿½, SceneSortï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Course_Toggle.isOn == false) 
         {   SceneSort.Remove(SceneBuildNum); 
         }
