@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class CSVPath1 : MonoBehaviour
 {
@@ -28,24 +29,20 @@ public class CSVPath1 : MonoBehaviour
     public List<int> CollisionCounting = new List<int>();
     // public List<float> CollisionTime = new List<float>();
 
-    private void Awake() 
-    {
-        // InputData1 = GameObject.Find("Button").GetComponent<InputData1>();
-        // StartCanvas = GameObject.Find("StartCanvas");
-        // Time.timeScale = 0;
-    }
+    int scene; 
+    
 
     void Start()
     {
-        //filename = Application.dataPath + "/" + "Path.csv";
         
     }
 
     void Update()
     {
-        // Time.timeScale = 1;
+        
+        scene = SceneManager.GetActiveScene().buildIndex;
 
-        filename = Application.dataPath + "/" + PlayerPrefs.GetString("name") + "_" + PlayerPrefs.GetString("age") + "_" + "InputData1.InputText_Stage.text + _ + file.csv";
+        filename = Application.dataPath + "/" + DataManager.instance.nowplayer.name + "_" + DataManager.instance.nowplayer.age + "_" + DataManager.instance.nowplayer.height + "_" + DataManager.instance.nowplayer.weight + "_" + scene +"_file.csv";
 
         Timer1 = Time.time;
 
@@ -95,14 +92,14 @@ public class CSVPath1 : MonoBehaviour
         tw = new StreamWriter(filename, true);
         for (int i = 0; i < PositionX.Count; i++)
         {
-            tw.WriteLine(Mathf.Round(Timer[i]) + "," + PositionX[i] + "," + PositionZ[i] + "," +
+            tw.WriteLine(Timer[i] + "," + PositionX[i] + "," + PositionZ[i] + "," +
                 "." + "," + "." );
 
             for (int j = 0; j < CollisionCounting.Count; j++)
             {
                 if(PositionX[i] == CollisionPositionX[j] && PositionZ[i] == CollisionPositionZ[j])
                 {
-                    tw.WriteLine(Mathf.Round(Timer[i]) + "," + PositionX[i] + "," + PositionZ[i] + "," +
+                    tw.WriteLine(Timer[i] + "," + PositionX[i] + "," + PositionZ[i] + "," +
                     CollisionPositionY[j] + "," + CollisionCounting[j]);
                 }
             }
