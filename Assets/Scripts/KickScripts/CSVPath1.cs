@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class CSVPath1 : MonoBehaviour
 {
-    // InputData1 InputData1;
-
     public List<float> Timer = new List<float>(); 
     public float Timer1;
-
-    // GameObject StartCanvas;
-    // public bool activeSelf;
+    public float startTime;
 
     string filename = "";
 
@@ -32,9 +28,9 @@ public class CSVPath1 : MonoBehaviour
     int scene; 
     
 
-    void Start()
+    void Awake()
     {
-        
+        startTime = Time.time;
     }
 
     void Update()
@@ -53,11 +49,18 @@ public class CSVPath1 : MonoBehaviour
         PositionX.Add(Crashposition.x);
         PositionZ.Add(Crashposition.z);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     WriteCSV();
+        //     Debug.Log("space2");
+        // }
+        
+        if (SceneLoad.CSVtoggle == true || Input.GetKeyDown(KeyCode.W))
         {
             WriteCSV();
             Debug.Log("space2");
         }
+        
 
     }
 
@@ -92,14 +95,14 @@ public class CSVPath1 : MonoBehaviour
         tw = new StreamWriter(filename, true);
         for (int i = 0; i < PositionX.Count; i++)
         {
-            tw.WriteLine(Timer[i] + "," + PositionX[i] + "," + PositionZ[i] + "," +
+            tw.WriteLine(Timer[i]-startTime + "," + PositionX[i] + "," + PositionZ[i] + "," +
                 "." + "," + "." );
 
             for (int j = 0; j < CollisionCounting.Count; j++)
             {
                 if(PositionX[i] == CollisionPositionX[j] && PositionZ[i] == CollisionPositionZ[j])
                 {
-                    tw.WriteLine(Timer[i] + "," + PositionX[i] + "," + PositionZ[i] + "," +
+                    tw.WriteLine(Timer[i]-startTime + "," + PositionX[i] + "," + PositionZ[i] + "," +
                     CollisionPositionY[j] + "," + CollisionCounting[j]);
                 }
             }

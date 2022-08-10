@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
+    public static bool CSVtoggle ; 
+
     private void Start()
     {
+        CSVtoggle = false ;
 
         for (int i = 0; i < Scene_SortOrder.SceneSort.Count; i++)
         {
@@ -28,7 +31,7 @@ public class SceneLoad : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-
+            CSVtoggle = true ; 
             LoadNextLevel();
         }
     }
@@ -38,7 +41,7 @@ public class SceneLoad : MonoBehaviour
 
         if (Scene_SortOrder.currentSceneIndex >= Scene_SortOrder.SceneSort.Count)
         {
-            SceneManager.LoadScene(13);
+            SceneManager.LoadScene(17);
             Scene_SortOrder.currentSceneIndex = 0;
         }
         else
