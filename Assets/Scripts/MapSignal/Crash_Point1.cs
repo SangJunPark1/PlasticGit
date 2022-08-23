@@ -7,14 +7,23 @@ public class Crash_Point1 : MonoBehaviour
     public GameObject Signal_Ready;
     public GameObject Signal_Steady;
     public GameObject Signal_Acceleration;
+    public GameObject mesh;
+
 
     [SerializeField] public string WhatSignal;
+
+    void Awake() 
+    {
+       
+    }
 
     void Start()
     {
         Signal_Ready.SetActive(false);
         Signal_Steady.SetActive(false);
         Signal_Acceleration.SetActive(false);
+
+        mesh.GetComponent<MeshCollider>().convex = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,6 +49,7 @@ public class Crash_Point1 : MonoBehaviour
                 Signal_Ready.SetActive(false);
                 Signal_Steady.SetActive(false);
                 Signal_Acceleration.SetActive(true);
+                mesh.GetComponent<MeshCollider>().convex = false;
             }
         }
     }

@@ -18,7 +18,7 @@ public class Scene_SortOrder : MonoBehaviour
     public static int currentSceneIndex ;
 
     public static List<int> SceneSort = new List<int>();  // �� ��ȣ�� ���������� ���� �迭
-    static int[] SceneBuildNum_List = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100};  // �� ���� ����
+    static int[] SceneBuildNum_List = new int[] { 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100,100};  // �� ���� ����
     // ���� ��� 1����-2��, 2����-3��, 3����-1�� ���� üũ�� �ߴٸ�
     // SceneSort = {3,1,2}
     // SceneBuildNum_List = {2,3,1}
@@ -47,7 +47,7 @@ public class Scene_SortOrder : MonoBehaviour
         // �ݺ����� ������ SceneBuildNum_List�� ������ �����
         for (int i = 0; i < SceneSort.Count; i++)
         {
-            for (int j = 0; j < 17; j++)
+            for (int j = 0; j < 18; j++)
             {
                 if (SceneSort[i] == j+1)
                 {

@@ -41,7 +41,7 @@ public class SceneLoad : MonoBehaviour
 
         if (Scene_SortOrder.currentSceneIndex >= Scene_SortOrder.SceneSort.Count)
         {
-            SceneManager.LoadScene(17);
+            SceneManager.LoadScene(18);
             Scene_SortOrder.currentSceneIndex = 0;
         }
         else

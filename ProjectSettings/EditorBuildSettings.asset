@@ -36,26 +36,29 @@ EditorBuildSettings:
     path: Assets/Scenes/ForResearch/TurnRight_3.unity
     guid: 5b760580b574d0a46864fb6d9254e2a8
   - enabled: 1
-    path: Assets/Scenes/ForResearch/U_Turn_1.unity
-    guid: 1724eeca4dc77e24da2b7f2563d272d5
+    path: Assets/Scenes/ForResearch/AccTurn_Right 1.unity
+    guid: 1f8d11982ad5b094c96c4a09e45b2bdf
+  - enabled: 1
+    path: Assets/Scenes/ForResearch/AccTurn_Left 1.unity
+    guid: 08f74a513e13de141a14f981af2035c3
   - enabled: 1
     path: Assets/Scenes/ForResearch/Acceleration_Straight_Course.unity
     guid: 295be203b4285ff4b9c9b0982b3b1dfb
   - enabled: 1
+    path: Assets/Scenes/ForResearch/DecTurn_Right 1.unity
+    guid: de7908053e7b5c94fbff8e6f538c1809
+  - enabled: 1
+    path: Assets/Scenes/ForResearch/DecTurn_Left 1.unity
+    guid: cf6a2c2316efa674892b1f7d07ce9ce8
+  - enabled: 1
     path: Assets/Scenes/ForResearch/Deceleration_Straight_Course.unity
     guid: 6cd546672b17b5d4d8c43cc08703bf12
   - enabled: 1
-    path: Assets/Scenes/ForResearch/AccTurn_Right.unity
-    guid: ccb8a33d2ba37bf48b3a6ce8f79de343
+    path: Assets/Scenes/ForResearch/U_Turn_1.unity
+    guid: 1724eeca4dc77e24da2b7f2563d272d5
   - enabled: 1
-    path: Assets/Scenes/ForResearch/AccTurn_Left.unity
-    guid: ec5444d27e10e4247a58feee5250f25e
-  - enabled: 1
-    path: Assets/Scenes/ForResearch/DecTurn_Right.unity
-    guid: bb0c2bad179d11749adf1d64d4fd4558
-  - enabled: 1
-    path: Assets/Scenes/ForResearch/DecTurn_Left.unity
-    guid: 5d99534de1d2d974e8d1d9c92d07ac96
+    path: Assets/Scenes/ForResearch/U_Turn_2.unity
+    guid: 4ba1fb6cd4ea5fa449e57bfa63909de0
   - enabled: 1
     path: Assets/Scenes/ForResearch/End.unity
     guid: 4b81f9c8397c07c489c3942523ab46de

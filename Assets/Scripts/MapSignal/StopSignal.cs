@@ -25,12 +25,12 @@ public class StopSignal : MonoBehaviour
     {
         Signal_Steady.SetActive(false);
         int count = 0;
-        while (count < 3)
+        while (count < 2f)
         {
             stopText.SetActive(true);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             stopText.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             count++;
         }
         Signal_Steady.SetActive(true);
