@@ -35,18 +35,18 @@ public class Control2 : MonoBehaviour
 	public float maxSpeed = 500f;    // 전진 최고속도
 	public float maxRevSpeed = 100f; // 후진 최고속도
 
-
-
 	public int maxTorque = 50;
 
 	private float prevSteerAngle;
-	private bool bHandBraked = false;
+	public static bool bHandBraked = false;
 
 	private float lowStiffness = 0.2f;
 	private float highStiffness = 1f;
 
 	// public Texture2D speedometerDial;
 	// public Texture2D speedometerPointer;
+
+	public static float public_steerAngle; // CSV 파일용
 
 	private void Awake()
 	{
@@ -133,6 +133,7 @@ public class Control2 : MonoBehaviour
 		//print ("steerAngle:" + steerAngle);
 		// x*=y-> x = x*y
 		steerAngle *= Input.GetAxis("Horizontal") / 2;
+		public_steerAngle = steerAngle;
 
 		//좌우 방향전환
 		colliderF1.steerAngle = steerAngle;
@@ -168,6 +169,8 @@ public class Control2 : MonoBehaviour
 			bHandBraked = true;
 			colliderF1.brakeTorque = 500000;
 			colliderF2.brakeTorque = 500000;
+
+
 		}
 		else
 		{
@@ -175,6 +178,7 @@ public class Control2 : MonoBehaviour
 			colliderF2.brakeTorque = 0;
 			colliderR1.brakeTorque = 0;
 			bHandBraked = false;
+
 		}
 	}
 

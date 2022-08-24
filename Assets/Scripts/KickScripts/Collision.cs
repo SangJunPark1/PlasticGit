@@ -11,7 +11,7 @@ public class Collision : MonoBehaviour
     [SerializeField] TextMesh DisplaySpeed;
 
     public static int vec_kmPerhour_int;
-
+    public static float vec_kmPerhour_float;
 
     public Rigidbody rb;
 
@@ -29,8 +29,8 @@ public class Collision : MonoBehaviour
     void FixedUpdate()
     {
         float vec = Mathf.Sqrt(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y + rb.velocity.z * rb.velocity.z);
-        float vec_kmPerhour = (vec * 3600) / 1000;
-        vec_kmPerhour_int = (int)vec_kmPerhour;
+        vec_kmPerhour_float = (vec * 3600) / 1000;
+        vec_kmPerhour_int = (int)vec_kmPerhour_float;
         DisplaySpeed.text = vec_kmPerhour_int.ToString();
 
     }

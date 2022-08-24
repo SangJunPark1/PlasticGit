@@ -16,8 +16,15 @@ public class CSVPath1 : MonoBehaviour
     Vector3 Crashposition; 
     Vector3 Crashposition1;
 
-    public List<float> PositionX = new List<float>();
-    public List<float> PositionZ = new List<float>();
+    int Brake_Count; // 브레이크 횟수
+
+    public List<float> PositionX = new List<float>();  //킥보드의 x축 위치
+    public List<float> PositionZ = new List<float>();   //킥보드의 Z축 위치
+    public List<bool> Brake_counting = new List<bool>();  //브레이크 사용유무 (브레이크 밟으면 True)
+    public List<float> Kick_Velocity = new List<float>();  // 킥보드 속도
+    public List<float> Kick_SteerAngle = new List<float>();  // 조향각도
+    public List<bool> deviance = new List<bool>();  // 경로이탈 횟수
+
 
     public List<float> CollisionPositionX = new List<float>();
     public List<float> CollisionPositionZ = new List<float>();
@@ -48,13 +55,17 @@ public class CSVPath1 : MonoBehaviour
 
         PositionX.Add(Crashposition.x);
         PositionZ.Add(Crashposition.z);
+        Brake_counting.Add(Control2.bHandBraked);
+        Kick_Velocity.Add(Collision.vec_kmPerhour_float);
+        Kick_SteerAngle.Add(Control2.public_steerAngle);
+        deviance.Add(CorrectLine.deviance_bool);
 
         // if (Input.GetKeyDown(KeyCode.W))
         // {
         //     WriteCSV();
         //     Debug.Log("space2");
         // }
-        
+
         if (SceneLoad.CSVtoggle == true || Input.GetKeyDown(KeyCode.W))
         {
             WriteCSV();
@@ -89,21 +100,22 @@ public class CSVPath1 : MonoBehaviour
         
         TextWriter tw = new StreamWriter(filename, false);
 
-        tw.WriteLine("Time, PositionX, PositionZ, PositionY, CollisionCounting");
+        tw.WriteLine("Time, PositionX, PositionZ, PositionY, CollisionCounting, Braking, Velocity, SteerAngle, deviance");
         tw.Close();
 
         tw = new StreamWriter(filename, true);
         for (int i = 0; i < PositionX.Count; i++)
         {
             tw.WriteLine(Timer[i]-startTime + "," + PositionX[i] + "," + PositionZ[i] + "," +
-                "." + "," + "." );
+                "." + "," + "." + "," + Brake_counting[i] + "," + Kick_Velocity[i] + "," + Kick_SteerAngle[i] + "," + deviance[i]);
 
             for (int j = 0; j < CollisionCounting.Count; j++)
             {
                 if(PositionX[i] == CollisionPositionX[j] && PositionZ[i] == CollisionPositionZ[j])
                 {
                     tw.WriteLine(Timer[i]-startTime + "," + PositionX[i] + "," + PositionZ[i] + "," +
-                    CollisionPositionY[j] + "," + CollisionCounting[j]);
+                    CollisionPositionY[j] + "," + CollisionCounting[j] + "," + Brake_counting[j] + "," + Kick_Velocity[j]
+                     + "," + Kick_SteerAngle[j] + "," + deviance[j]);
                 }
             }
         }
