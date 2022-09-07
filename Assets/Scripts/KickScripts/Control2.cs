@@ -43,6 +43,8 @@ public class Control2 : MonoBehaviour
 	private float lowStiffness = 0.2f;
 	private float highStiffness = 1f;
 
+	float GetGetAxis;
+
 	// public Texture2D speedometerDial;
 	// public Texture2D speedometerPointer;
 
@@ -51,6 +53,7 @@ public class Control2 : MonoBehaviour
 	private void Awake()
 	{
 		StartCanvas = GameObject.Find("StartCanvas");
+		GetGetAxis = 0;
 	}
 
 	void Start()
@@ -75,8 +78,8 @@ public class Control2 : MonoBehaviour
 	void Update()
 	{
 		// 앞바퀴 2개를 이동방향으로 향하기
-		tireTransformF.Rotate(Vector3.up, colliderF1.steerAngle - prevSteerAngle, Space.World);
-		prevSteerAngle = colliderF1.steerAngle;
+		tireTransformF.Rotate(Vector3.up, colliderF2.steerAngle - prevSteerAngle, Space.World);
+		prevSteerAngle = colliderF2.steerAngle;
 
 		if (Input.GetKeyDown(KeyCode.R))
 		{
@@ -130,8 +133,22 @@ public class Control2 : MonoBehaviour
 		 * t가 0이면 from을 리턴, t가 1이면 to 를 리턴함, 0.5라면 from, to 의 중간값이 리턴됨
 		*/
 		float steerAngle = Mathf.Lerp(lowSpeedSteerAngle, highSpeedStreerAngle, 1 / speedFactor);
-		//print ("steerAngle:" + steerAngle);
-		// x*=y-> x = x*y
+        //print ("steerAngle:" + steerAngle);
+        // x*=y-> x = x*y
+
+/*        if (GetGetAxis>=-0.5 & GetGetAxis<=0.5)
+        {
+			if (Input.GetKey(KeyCode.LeftArrow))
+			{
+				GetGetAxis = GetGetAxis - 0.03f;
+			}
+			if (Input.GetKey(KeyCode.RightArrow))
+			{
+				GetGetAxis = GetGetAxis + 0.03f;
+			}
+		}
+
+		steerAngle *= GetGetAxis ;*/
 		steerAngle *= Input.GetAxis("Horizontal") / 2;
 		public_steerAngle = steerAngle;
 
@@ -141,6 +158,7 @@ public class Control2 : MonoBehaviour
 
 		// 바퀴회전효과
 		wheelTransformF.Rotate(-colliderF1.rpm / 60 * 360 * Time.fixedDeltaTime, 0, 0);
+		wheelTransformF.Rotate(-colliderF2.rpm / 60 * 360 * Time.fixedDeltaTime, 0, 0);
 		wheelTransformR.Rotate(-colliderR1.rpm / 60 * 360 * Time.fixedDeltaTime, 0, 0);
 	}
 
