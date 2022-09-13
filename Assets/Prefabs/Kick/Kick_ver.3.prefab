@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068182253665319139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.68, z: 8.77}
+  m_LocalPosition: {x: 0, y: 3.54, z: 8.77}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 6119476560938580545}
@@ -793,6 +793,7 @@ GameObject:
   - component: {fileID: 8067042021482436964}
   - component: {fileID: 6892599998486339834}
   - component: {fileID: 6892599998486339833}
+  - component: {fileID: 740680384}
   m_Layer: 0
   m_Name: Kick_ver.3
   m_TagString: Player
@@ -858,7 +859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6892599998486339835}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94c0fe3b5cfe0b9468f927f2115ed3f4, type: 3}
   m_Name: 
@@ -893,7 +894,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeSelf: 0
   handleBar: {fileID: 1746630470512910234}
-  colliderF: {fileID: 7796602694827999827}
+  colliderF1: {fileID: 7796602694827999827}
+  colliderF2: {fileID: 2068182253856379271}
   highestSpeed: 500
   lowSpeedSteerAngle: 0.1
   highSpeedStreerAngle: 25
@@ -914,6 +916,10 @@ MonoBehaviour:
   startTime: 0
   PositionX: []
   PositionZ: []
+  Brake_counting: 
+  Kick_Velocity: []
+  Kick_SteerAngle: []
+  deviance: 
   CollisionPositionX: []
   CollisionPositionZ: []
   CollisionPositionY: []
@@ -948,6 +954,18 @@ MonoBehaviour:
   maxSpeed: 30
   maxRevSpeed: 100
   maxTorque: 200
+--- !u!114 &740680384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6892599998486339835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab61acbde728bf4c9d62b4d74b77633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7294466451732198689
 GameObject:
   m_ObjectHideFlags: 0

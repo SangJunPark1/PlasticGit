@@ -2926,7 +2926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8965987726739562042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60.8, y: 0, z: 6.2}
+  m_LocalPosition: {x: 60.8, y: 0, z: -106.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8965987726534904231}
@@ -2972,7 +2972,7 @@ Transform:
   - {fileID: 8965987726803688345}
   - {fileID: 8965987725370844356}
   - {fileID: 8965987726666734447}
-  - {fileID: 8965987726699785780}
+  - {fileID: 8928156635546293087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4257,6 +4257,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8965987726739562043}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9bdd973f499a47a4f84b1f27f912ae43,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 43
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9bdd973f499a47a4f84b1f27f912ae43, type: 3}
       propertyPath: m_Name
       value: RedLine
@@ -4319,9 +4324,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdd973f499a47a4f84b1f27f912ae43, type: 3}
---- !u!4 &8965987726699785780 stripped
+--- !u!4 &8928156635546293087 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 9bdd973f499a47a4f84b1f27f912ae43,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9bdd973f499a47a4f84b1f27f912ae43,
     type: 3}
   m_PrefabInstance: {fileID: 8965987726699918516}
   m_PrefabAsset: {fileID: 0}

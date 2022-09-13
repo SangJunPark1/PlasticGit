@@ -22,22 +22,30 @@ public class SceneLoad : MonoBehaviour
         // �ٷ� ���� ���������� �Ѿ�� ġƮŰ
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            CSVtoggle = true ;
             LoadNextLevel();
         }
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        { 
+
+            Application.Quit();
+        }   
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.tag == "Player")
         {
-            CSVtoggle = true ; 
-            LoadNextLevel();
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>().drag = 100000f;
+            CSVtoggle = true ;
+            StartCoroutine(LoadNextLevel1());
         }
     }
 
-    public static void LoadNextLevel()                                                       
+    IEnumerator LoadNextLevel1()                                                       
     {
+        yield return new WaitForSeconds(1f);
 
         if (Scene_SortOrder.currentSceneIndex >= Scene_SortOrder.SceneSort.Count)
         {
@@ -46,11 +54,23 @@ public class SceneLoad : MonoBehaviour
         }
         else
         {
-            
             SceneManager.LoadScene(Scene_SortOrder.SceneSort[Scene_SortOrder.currentSceneIndex]);    // 'nextSceneIndex' ��° ���� ����϶� 
             Scene_SortOrder.currentSceneIndex += 1;
         }
+    }
 
+    void LoadNextLevel()                                                       
+    {
+        if (Scene_SortOrder.currentSceneIndex >= Scene_SortOrder.SceneSort.Count)
+        {
+            SceneManager.LoadScene(18);
+            Scene_SortOrder.currentSceneIndex = 0;
+        }
+        else
+        {
+            SceneManager.LoadScene(Scene_SortOrder.SceneSort[Scene_SortOrder.currentSceneIndex]);    // 'nextSceneIndex' ��° ���� ����϶� 
+            Scene_SortOrder.currentSceneIndex += 1;
+        }
     }
 
 }
